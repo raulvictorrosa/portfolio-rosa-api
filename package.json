@@ -1,0 +1,8 @@
+{
+  "name": "portifolio-rosa-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/raulvictorrosa/portifolio-rosa-api",
+  "author": "Raul Rosa <raulvictorrosa@gmail.com>",
+  "license": "MIT"
+}
