@@ -4,5 +4,14 @@
   "main": "index.js",
   "repository": "https://github.com/raulvictorrosa/portifolio-rosa-api",
   "author": "Raul Rosa <raulvictorrosa@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }
