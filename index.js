@@ -4,7 +4,7 @@ const server = express();
 const runServer = async () => {
   await require('./db').connect();
 
-  server.use('/api/v1/portifolios', require('./routes/portifolios'));
+  server.use('/api/v1/portfolios', require('./routes/portfolios'));
 
   const PORT = parseInt(process.env.PORT, 10) || 3001;
   server.listen(PORT, err => {
