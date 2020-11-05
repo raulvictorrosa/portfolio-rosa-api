@@ -6,7 +6,8 @@
   "author": "Raul Rosa <raulvictorrosa@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "populate": "node populate/index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
