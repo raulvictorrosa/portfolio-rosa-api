@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const portfolioSchema = new Schema({
   title: { type: String, required: true, maxlenght: 128 },
@@ -9,8 +9,9 @@ const portfolioSchema = new Schema({
   jobTitle: { type: String, required: true },
   description: { type: String, required: true },
   startDate: { type: Date, required: true },
+  userId: { type: String, required: true },
   endDate: { type: Date, required: false },
-  createdAt: { type: Date, default: Date.now() },
-});
+  createdAt: { type: Date, default: Date.now() }
+})
 
-module.exports = mongoose.model('Portfolio', portfolioSchema);
+module.exports = mongoose.model('Portfolio', portfolioSchema)
