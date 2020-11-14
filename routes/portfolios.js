@@ -1,11 +1,14 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 const {
   getPortfolios,
   getPortfolioBydId,
-} = require('../controllers/portfolios');
+  createPortfolio
+} = require('../controllers/portfolios')
 
-router.get('/', getPortfolios);
-router.get('/:id', getPortfolioBydId);
+router.get('/', getPortfolios)
+router.get('/:id', getPortfolioBydId)
 
-module.exports = router;
+router.post('/', createPortfolio)
+
+module.exports = router
