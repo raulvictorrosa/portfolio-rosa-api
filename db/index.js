@@ -1,6 +1,6 @@
-const config = require('../config/dev');
-const mongoose = require('mongoose');
-require('./models/portfolio');
+const config = require('../config/dev')
+const mongoose = require('mongoose')
+require('./models/portfolio')
 
 exports.connect = () => {
   return mongoose.connect(
@@ -9,11 +9,11 @@ exports.connect = () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
-      useFindAndModify: false,
+      useFindAndModify: false
     },
-    err => {
-      if (err) console.error(err);
-      else console.log('Connected to DB!');
+    (err) => {
+      if (err) console.error(err)
+      else console.log('Connected to DB!')
     }
-  );
-};
+  )
+}

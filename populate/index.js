@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const config = require('../config/dev');
-const fakeDB = require('./FakeDB');
+const mongoose = require('mongoose')
+const config = require('../config/dev')
+const fakeDB = require('./FakeDB')
 
 mongoose.connect(
   config.DB_URI,
@@ -8,15 +8,15 @@ mongoose.connect(
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false,
+    useFindAndModify: false
   },
-  async err => {
-    if (err) console.error(err);
+  async (err) => {
+    if (err) console.error(err)
     else {
-      console.log('> Starting populating DB...');
-      await fakeDB.populate();
-      await mongoose.connection.close();
-      console.log('> DB has been populate!');
+      console.log('> Starting populating DB...')
+      await fakeDB.populate()
+      await mongoose.connection.close()
+      console.log('> DB has been populate!')
     }
   }
-);
+)

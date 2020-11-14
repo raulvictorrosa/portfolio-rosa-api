@@ -7,8 +7,9 @@ const data = {
       location: 'Spain, Barcelona',
       jobTitle: 'Engineer',
       description: 'Doing something, programing....',
+      userId: 'google-oauth2|105676730687071612684',
       startDate: '01/01/2014',
-      endDate: '01/01/2016',
+      endDate: '01/01/2016'
     },
     {
       title: 'Job in Siemens',
@@ -17,8 +18,9 @@ const data = {
       location: 'Slovakia, Kosice',
       jobTitle: 'Software Engineer',
       description: 'Responsoble for parsing framework for JSON medical data.',
+      userId: 'google-oauth2|105676730687071612684',
       startDate: '01/01/2011',
-      endDate: '01/01/2013',
+      endDate: '01/01/2013'
     },
     {
       title: 'Work in USA',
@@ -27,10 +29,11 @@ const data = {
       location: 'USA, Montana',
       jobTitle: 'Housekeeping',
       description: 'So much responsibility....Overloaaaaaad',
+      userId: 'google-oauth2|105676730687071612684',
       startDate: '01/01/2010',
-      endDate: '01/01/2011',
-    },
-  ],
-};
+      endDate: '01/01/2011'
+    }
+  ]
+}
 
-module.exports = data;
+module.exports = data
