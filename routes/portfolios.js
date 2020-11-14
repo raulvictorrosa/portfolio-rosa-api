@@ -5,10 +5,11 @@ const {
   getPortfolioBydId,
   createPortfolio
 } = require('../controllers/portfolios')
+const { checkJwt } = require('../controllers/auth')
 
 router.get('/', getPortfolios)
 router.get('/:id', getPortfolioBydId)
 
-router.post('/', createPortfolio)
+router.post('/', checkJwt, createPortfolio)
 
 module.exports = router
