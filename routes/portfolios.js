@@ -4,7 +4,8 @@ const {
   getPortfolios,
   getPortfolioBydId,
   createPortfolio,
-  updatePortfolio
+  updatePortfolio,
+  deletePortfolio
 } = require('../controllers/portfolios')
 const { checkJwt } = require('../controllers/auth')
 
@@ -14,5 +15,7 @@ router.get('/:id', getPortfolioBydId)
 router.post('/', checkJwt, createPortfolio)
 
 router.patch('/:id', checkJwt, updatePortfolio)
+
+router.delete('/:id', checkJwt, deletePortfolio)
 
 module.exports = router
