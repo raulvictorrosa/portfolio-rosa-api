@@ -28,3 +28,21 @@ exports.createPortfolio = async (req, res) => {
     return res.status(422).send(error.message)
   }
 }
+
+exports.updatePortfolio = async (req, res) => {
+  const {
+    body,
+    params: { id }
+  } = req
+
+  try {
+    const updatedPorfolio = await Portfolio.findOneAndUpdate(
+      { _id: id },
+      body,
+      { new: true, runValidators: true }
+    )
+    return res.json(updatedPorfolio)
+  } catch (error) {
+    return res.status(422).send(error.message)
+  }
+}
