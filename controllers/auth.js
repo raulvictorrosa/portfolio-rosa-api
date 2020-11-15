@@ -9,7 +9,7 @@ exports.checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 10,
-    jwksUri: 'https://raulrosa.us.auth0.com/.well-know/jwks.json'
+    jwksUri: 'https://raulrosa.us.auth0.com/.well-known/jwks.json'
   }),
   audience: 'https://raulrosa.us.auth0.com/api/v2/',
   issuer: 'https://raulrosa.us.auth0.com/',
