@@ -39,7 +39,7 @@ exports.createBlog = async (req, res) => {
     const createdBlog = await blog.save()
     return res.json(createdBlog)
   } catch (error) {
-    return res.status(422).json(error)
+    return res.status(422).json(error.message)
   }
 }
 
