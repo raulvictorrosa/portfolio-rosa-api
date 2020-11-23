@@ -30,6 +30,16 @@ exports.getBlogBySlug = async (req, res) => {
   }
 }
 
+exports.getBlogsBydUser = async (req, res) => {
+  const userId = req.user.sub
+  try {
+    const blogs = await Blog.find({ userId })
+    return res.json(blogs)
+  } catch (error) {
+    return res.status(422).json(error)
+  }
+}
+
 exports.createBlog = async (req, res) => {
   const blogData = req.body
   blogData.userId = req.user.sub
