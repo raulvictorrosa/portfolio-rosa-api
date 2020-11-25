@@ -35,7 +35,10 @@ exports.getBlogBySlug = async (req, res) => {
 exports.getBlogsBydUser = async (req, res) => {
   const userId = req.user.sub
   try {
-    const blogs = await Blog.find({ userId })
+    const blogs = await Blog.find({
+      userId,
+      status: { $in: ['draft', 'published'] }
+    })
     return res.json(blogs)
   } catch (error) {
     return res.status(422).json(error)
