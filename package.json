@@ -6,7 +6,7 @@
   "author": "Raul Rosa <raulvictorrosa@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "NODE_OPTIONS='--inspect' nodemon index.js",
     "start": "node index.js",
     "populate": "node populate/index.js"
   },
