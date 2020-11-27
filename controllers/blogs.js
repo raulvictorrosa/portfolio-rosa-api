@@ -9,7 +9,18 @@ exports.getBlogs = async (req, res) => {
     const blogs = await Blog.find({ status: 'published' }).sort({
       createdAt: -1
     })
-    return res.json(blogs)
+    const { access_token } = await getAccessToken()
+    const blogsWithUsers = []
+    const authors = {}
+
+    for (let blog of blogs) {
+      const author =
+        authors[blog.userId] || (await getAuth0User(access_token)(blog.userId))
+      authors[author.user_id] = author
+      blogsWithUsers.push({ blog, author })
+    }
+
+    return res.json(blogsWithUsers)
   } catch (error) {
     return res.status(422).json(error)
   }
@@ -28,9 +39,9 @@ exports.getBlogBySlug = async (req, res) => {
   try {
     const blog = await Blog.findOne({ slug: req.params.slug })
     const { access_token } = await getAccessToken()
-    const user = await getAuth0User(access_token)(blog.userId)
+    const author = await getAuth0User(access_token)(blog.userId)
 
-    return res.json({ blog, user })
+    return res.json({ blog, author })
   } catch (error) {
     return res.status(422).json(error)
   }
